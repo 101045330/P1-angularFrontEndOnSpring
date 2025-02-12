@@ -1,0 +1,24 @@
+<div class="container mt-2">
+    <form>
+        <fieldset class="mt-2">
+            <legend>
+                Login Form
+            </legend>
+
+
+            <div class="form-group">
+                <label for="username"> Username (Email) &nbsp;</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" (blur)="validateEmail()"
+                    (focus)="clearError()" (keyup)="validateEmail()" required /><!--input-->
+                <p *ngIf="isValidEmail" class="text-success"><b>&#x2713;</b></p>
+                <p *ngIf="errorMessage" class="text-danger"> {{ errorMessage }} </p>
+            </div><!--form-group-->
+
+        </fieldset>
+
+        <div class="form-group mt-2">
+            <button (click)="clearEmail()"> Clear </button> &nbsp;
+            <button> Next >> </button>
+        </div>
+    </form>
+</div><!--container-->
